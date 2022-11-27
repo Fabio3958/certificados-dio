@@ -22,7 +22,7 @@
             <div class="card text-white bg-dark mb-3 "  th:each="certificate : ${certificates}" style="width: 32.5%; height: 120px; margin: 5px ">
                 <div class="card-body">
                 <h5 class="card-title" th:text="${certificate.name}"></h5>
-                <a th:href="${certificate.link}" th:text="${certificate.link}">
+                <a th:href="${certificate.link}" th:text="${certificate.link}" style="text-decoration: none">
                 </a>
                     <br>
                     <span th:text="${#temporals.format(certificate.date, 'dd/MM/yyyy')}"></span>
