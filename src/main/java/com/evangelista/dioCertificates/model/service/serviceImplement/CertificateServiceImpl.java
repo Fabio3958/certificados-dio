@@ -18,4 +18,6 @@ public class CertificateServiceImpl implements CertificateService {
     public List<Certificate> findAll() {
         return certificateRepository.findAll();
     }
+
+    public void save(Certificate certificate){ certificateRepository.save(certificate); }
 }
