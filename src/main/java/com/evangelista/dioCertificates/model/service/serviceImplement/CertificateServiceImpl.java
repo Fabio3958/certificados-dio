@@ -20,4 +20,6 @@ public class CertificateServiceImpl implements CertificateService {
     }
 
     public void save(Certificate certificate){ certificateRepository.save(certificate); }
+
+    public void delete(Long id){ certificateRepository.deleteById(id); }
 }

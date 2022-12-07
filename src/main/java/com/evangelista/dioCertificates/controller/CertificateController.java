@@ -4,9 +4,8 @@ import com.evangelista.dioCertificates.model.Certificate;
 import com.evangelista.dioCertificates.model.service.CertificateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,5 +34,9 @@ public class CertificateController {
         return "redirect:/certificates";
     }
 
-
+    @GetMapping("/delete-certificate/{id}")
+    public String deleteCertificate(@PathVariable(name = "id") Long id){
+        certificateService.delete(id);
+        return "redirect:/certificates";
+    }
 }
